@@ -1,8 +1,8 @@
-title: Hamilton
-description: A minimal and beautiful Jekyll theme best for writing and note-taking.
-author: Shangzhi Huang
+title: 쳐다도 보지 말고, 생각지도 말고, 안보이게 하라고
+description: 디스크립션 설명충.
+author: 자무카
 avatar: /logo.png
-email: ngzhio@gmail.com
+email: htmsejong@gmail.com
 
 skin: solarized
 
@@ -11,7 +11,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-remote-theme
 
 paginate: 10
 
