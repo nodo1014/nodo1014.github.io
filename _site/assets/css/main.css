@@ -453,14 +453,14 @@ ul.task-list li {
  * Wrapper
  */
 .wrapper {
-  max-width: calc(1440px - (2rem));
+  max-width: calc(1300px - (2rem));
   margin-right: auto;
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem; }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1600px) {
     .wrapper {
-      max-width: calc(1440px - (2rem * 2));
+      max-width: calc(1300px - (2rem * 2));
       padding-right: 2rem;
       padding-left: 2rem; } }
 
@@ -563,7 +563,7 @@ ul.task-list li {
       display: block; }
   .site-nav .current-page {
     text-decoration: line-through; }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1300px) {
     .site-nav {
       position: static;
       float: right;
@@ -595,11 +595,11 @@ ul.task-list li {
  */
 .site-body {
   display: grid;
-  grid-template-columns: calc(1440px * 0.24) 1fr;
+  grid-template-columns: calc(1300px * 0.24) 1fr;
   overflow: hidden; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1300px) {
     .site-body {
-      grid-template-columns: calc(1440px * 0.18) 1fr; } }
+      grid-template-columns: calc(1300px * 0.18) 1fr; } }
   @media screen and (max-width: 600px) {
     .site-body {
       grid-template-columns: 1fr; } }
@@ -611,7 +611,7 @@ ul.task-list li {
   padding: 2rem;
   border-right: 1px solid;
   font-size: 0.8rem; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1300px) {
     .site-sidebar {
       padding: 1rem;
       font-size: 0.6rem; } }
@@ -706,7 +706,7 @@ ul.social-icons {
   scrollbar-width: none;
   padding-left: 2rem;
   padding-right: 2rem; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1300px) {
     .site-main {
       padding-left: 1rem;
       padding-right: 1rem; } }
@@ -737,7 +737,7 @@ ul.social-icons {
     .post-list li h2 {
       margin-bottom: 0;
       font-size: 1.4rem; }
-      @media screen and (min-width: 1440px) {
+      @media screen and (min-width: 1600px) {
         .post-list li h2 {
           font-size: 1.5rem; } }
     .post-list li .post-excerpt {
@@ -839,7 +839,7 @@ ul.post-categories li {
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 54px; }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1600px) {
     .post-title,
     .post-content h1 {
       font-size: 2rem; } }
@@ -857,7 +857,7 @@ ul.post-categories li {
     margin-top: 2rem; }
   .post-content h2 {
     font-size: 1.4rem; }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1600px) {
       .post-content h2 {
         font-size: 1.5rem; } }
   .post-content h3 {
@@ -887,7 +887,7 @@ ul.post-categories li {
   margin: 0;
   padding: 0;
   font-weight: bold; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1300px) {
     .taxonomies {
       grid-template-columns: repeat(2, 1fr); } }
   .taxonomies .taxonomy {
@@ -947,7 +947,7 @@ figcaption.align-center {
   .site-footer p, .site-footer ul {
     margin-bottom: 0.5rem; }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1300px) {
   .footer-col-wrapper {
     display: flex; }
 
@@ -960,3 +960,47 @@ figcaption.align-center {
     .footer-col:last-child {
       padding-right: 0;
       padding-left: 1rem; } }
+/* Import Noto Sans Web Fonts */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format("opentype"); }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format("opentype"); }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format("opentype"); }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format("opentype"); }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format("opentype"); }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format("opentype"); }
+/* Apply your blog tags.. */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p {
+  font-family: 'Noto Sans KR', sans-serif; }

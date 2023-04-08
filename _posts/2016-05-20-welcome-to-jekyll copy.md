@@ -1,11 +1,18 @@
 ---
 layout: post
+title: "테스트 태그 작성자 제목 post misc true author "
+categories: misc
+tag: [동남아,일본,중국]
+author: 지유, 성현
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# 깃헙 블로그 어렵당....루비루비..
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
+## 부제목
+### 소제목
+동해물과 백두산이 마르고 닳도록...
+# 제목2
+## 2ㅇㅇㅇㅇ
+종이 한장에 정리하자.
 
 {% highlight ruby %}
 def print_hi(name)

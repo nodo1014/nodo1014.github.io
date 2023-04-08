@@ -1,7 +1,11 @@
 ---
-layout: post
+layout: page
 title: Task Item List
-tags: [to-do list]
+categories: junk
+tags: [markdown, css, html]
+author:
+  - Bart Simpson
+  - Nelson Mandela Muntz
 ---
 
 This post tests the style of a task item list.
