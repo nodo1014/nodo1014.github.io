@@ -4,7 +4,7 @@ author: Shangzhi Huang
 avatar: /logo.png
 email: ngzhio@gmail.com
 
-skin: solarlized
+skin: solarized
 
 plugins:
   - jekyll-seo-tag
