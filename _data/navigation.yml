@@ -1,4 +1,4 @@
-- title: About
+- title: _data:navigation.yml에서
   url: /about/
 - title: Years
   url: /years/
@@ -6,6 +6,8 @@
   url: /categories/
 - title: Tags
   url: /tags/
+- title: 링크
+  url: https://nodo1014.github.io/
 - title: More
   sublinks:
     - title: FAQ
