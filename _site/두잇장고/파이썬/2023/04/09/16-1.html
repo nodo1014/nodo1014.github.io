@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>My Example Post | 암껏도 하지 마</title>
+<title>16-1 crispy-forms | 암껏도 하지 마</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="My Example Post" />
+<meta property="og:title" content="16-1 crispy-forms" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te." />
-<meta property="og:description" content="Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te." />
-<link rel="canonical" href="http://localhost:4000/junk/2016/05/20/my-example-post.html" />
-<meta property="og:url" content="http://localhost:4000/junk/2016/05/20/my-example-post.html" />
+<meta name="description" content="1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’" />
+<meta property="og:description" content="1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’" />
+<link rel="canonical" href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html" />
+<meta property="og:url" content="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html" />
 <meta property="og:site_name" content="암껏도 하지 마" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-05-20T00:00:00+09:00" />
+<meta property="article:published_time" content="2023-04-09T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="My Example Post" />
+<meta property="twitter:title" content="16-1 crispy-forms" />
 <meta name="twitter:site" content="@ngzhio" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2016-05-20T00:00:00+09:00","datePublished":"2016-05-20T00:00:00+09:00","description":"Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.","headline":"My Example Post","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/junk/2016/05/20/my-example-post.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/junk/2016/05/20/my-example-post.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-09T00:00:00+09:00","datePublished":"2023-04-09T00:00:00+09:00","description":"1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’","headline":"16-1 crispy-forms","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -39,6 +39,8 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/skin.css">
 
+<!-- Import D2Coding to header 2023-0410 코드블록용 -->
+<link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
 <!-- Begin selecting skin -->
 
 <!-- End selecting skin -->
@@ -81,13 +83,13 @@
       </label>
 
       <ul class="trigger">
+              <li><a class="" href="/categories/">카테고리별 목록</a></li>
+            
+              <li><a class="" href="/tags/">Tags</a></li>
+            
               <li><a class="" href="/about/">_data:navigation.yml에서</a></li>
             
               <li><a class="" href="/years/">Years</a></li>
-            
-              <li><a class="" href="/categories/">Categories</a></li>
-            
-              <li><a class="" href="/tags/">Tags</a></li>
             
               <li><a class="" href="http://jamukha.pythonanywhere.com">파쑝애니웨어</a></li>
             
@@ -110,38 +112,13 @@
       <div class="site-body wrapper">
         <aside class="site-sidebar" id="site-sidebar">
           
-            <div class="sidebar-section"><img src="/logo.png" class="author-avatar u-photo align-center" alt="자무카">
-  </div>
+            <h3 class="toc-title">Table of Contents</h3>
+<nav class="toc-nav">
+  <ul class="toc">
+  <li><a href="#1-폼모양-django-crispy-forms">1 폼모양 django-crispy-forms</a></li>
+</ul>
 
-<div class="sidebar-section">
-  <ul class="contact-list">
-    <li>
-        <i class="sidebar-icon fas fa-at"></i>
-        <span class="contact-info p-name">자무카</span>
-      </li>
-    <li>
-        <i class="sidebar-icon fas fa-envelope"></i>
-        <a class="contact-info u-email" href="mailto:htmsejong@gmail.com">htmsejong@gmail.com</a>
-      </li>
-    
-  </ul>
-</div>
-
-<div class="sidebar-section feed-subscribe">
-  <a href="/feed.xml">
-    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
-  </a>
-</div>
-
-<div class="sidebar-section">
-    <ul class="social-icons">
-      <li>
-          <a class="social-icon" href="https://twitter.com/ksunghyun"><i class="fab fa-twitter fa-2x" title="Twitter"></i></a>
-        </li><li>
-          <a class="social-icon" href="https://github.com/ngzhio/jekyll-theme-hamilton"><i class="fab fa-github fa-2x" title="GitHub"></i></a>
-        </li>
-    </ul>
-  </div>
+</nav>
 
           
         </aside>
@@ -150,21 +127,20 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">My Example Post</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2016-05-20T00:00:00+09:00" itemprop="datePublished">
-        May 20, 2016
+    <h1 class="post-title p-name" itemprop="name headline">16-1 crispy-forms</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-04-09T00:00:00+09:00" itemprop="datePublished">
+        Apr 9, 2023
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Bart Simpson</span></span>, 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Nelson Mandela Muntz</span></span></p>
+            <span class="p-author h-card" itemprop="name">자무카</span></span></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.</p>
+    <h2 id="1-폼모양-django-crispy-forms">1 폼모양 django-crispy-forms</h2>
+<p>settings.py 에 ‘crispy_forms 등록’
+CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
 
-<p>No laudem altera adolescens has, volumus lucilius eum no. Eam ei nulla audiam efficiantur. Suas affert per no, ei tale nibh sea. Sea ne magna harum, in denique scriptorem sea, cetero alienum tibique ei eos. Labores persequeris referrentur eos ei.</p>
 
   </div>
 
@@ -177,7 +153,12 @@
           
             <li class="post-category">
               
-              <a href="/categories/#junk">junk</a>
+              <a href="/categories/#%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0">두잇장고</a>
+            </li>
+          
+            <li class="post-category">
+              
+              <a href="/categories/#%ED%8C%8C%EC%9D%B4%EC%8D%AC">파이썬</a>
             </li>
           
         </ul>
@@ -192,17 +173,42 @@
           
             <li class="post-tag">
               
-              <a href="/tags/#css">css</a>
+              <a href="/tags/#createview">createview</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#html">html</a>
+              <a href="/tags/#loginrequiredmixin">loginrequiredmixin</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#markdown">markdown</a>
+              <a href="/tags/#userpassestestmixin">userpassestestmixin</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0">두잇장고</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#%EC%9E%A5%EA%B3%A0">장고</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#%ED%8C%8C%EC%9D%B4%EC%8D%AC">파이썬</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#%ED%8F%BC">폼</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#%ED%8F%BC%EA%BE%B8%EB%AF%B8%EA%B8%B0">폼꾸미기</a>
             </li>
           
         </ul>
@@ -211,23 +217,15 @@
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/junk/2016/05/19/super-short-article.html">
+        <a class="post-previous" href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> Some articles are just so short that we have to make the footer stick
+            <i class="fas fa-arrow-left"></i> 두잇장고 글쓰기 PostCreate
 
           </span>
         </a>
       
 
-      
-        <a class="post-next" href="/junk/2016/05/20/super-long-article.html">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
-            Some articles are just so long they deserve a really long title to see if things will break well
- <i class="fas fa-arrow-right"></i>
-          </span>
-        </a>
       
     </nav>
   </footer>

@@ -4,7 +4,7 @@ author: 자무카
 avatar: /logo.png
 email: htmsejong@gmail.com
 
-skin: solarized
+# skin: solarized
 
 plugins:
   - jekyll-seo-tag

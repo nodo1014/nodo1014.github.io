@@ -1,11 +1,11 @@
+- title: 카테고리별 목록
+  url: /categories/
+- title: Tags
+  url: /tags/
 - title: _data:navigation.yml에서
   url: /about/
 - title: Years
   url: /years/
-- title: Categories
-  url: /categories/
-- title: Tags
-  url: /tags/
 - title: 파쑝애니웨어
   url: http://jamukha.pythonanywhere.com
 - title: 링크

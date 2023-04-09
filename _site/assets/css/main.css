@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -397,6 +398,9 @@ blockquote {
   font-style: italic; }
   blockquote > :last-child {
     margin-bottom: 0; }
+  blockquote > p {
+    font-family: 'Okbi';
+    font-size: 1.7rem; }
   blockquote i, blockquote em {
     font-style: normal; }
 
@@ -405,7 +409,7 @@ blockquote {
  */
 pre,
 code {
-  font-family: Inconsolata;
+  font-family: D2Coding, 'D2 coding', monospace;
   border-radius: 0.3em; }
 
 code {
@@ -453,14 +457,14 @@ ul.task-list li {
  * Wrapper
  */
 .wrapper {
-  max-width: calc(1300px - (2rem));
+  max-width: calc(1200px - (2rem));
   margin-right: auto;
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem; }
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1400px) {
     .wrapper {
-      max-width: calc(1300px - (2rem * 2));
+      max-width: calc(1200px - (2rem * 2));
       padding-right: 2rem;
       padding-left: 2rem; } }
 
@@ -563,7 +567,7 @@ ul.task-list li {
       display: block; }
   .site-nav .current-page {
     text-decoration: line-through; }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1100px) {
     .site-nav {
       position: static;
       float: right;
@@ -595,11 +599,11 @@ ul.task-list li {
  */
 .site-body {
   display: grid;
-  grid-template-columns: calc(1300px * 0.24) 1fr;
+  grid-template-columns: calc(1200px * 0.24) 1fr;
   overflow: hidden; }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1100px) {
     .site-body {
-      grid-template-columns: calc(1300px * 0.18) 1fr; } }
+      grid-template-columns: calc(1200px * 0.18) 1fr; } }
   @media screen and (max-width: 600px) {
     .site-body {
       grid-template-columns: 1fr; } }
@@ -611,7 +615,7 @@ ul.task-list li {
   padding: 2rem;
   border-right: 1px solid;
   font-size: 0.8rem; }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1100px) {
     .site-sidebar {
       padding: 1rem;
       font-size: 0.6rem; } }
@@ -706,7 +710,7 @@ ul.social-icons {
   scrollbar-width: none;
   padding-left: 2rem;
   padding-right: 2rem; }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1100px) {
     .site-main {
       padding-left: 1rem;
       padding-right: 1rem; } }
@@ -737,7 +741,7 @@ ul.social-icons {
     .post-list li h2 {
       margin-bottom: 0;
       font-size: 1.4rem; }
-      @media screen and (min-width: 1600px) {
+      @media screen and (min-width: 1400px) {
         .post-list li h2 {
           font-size: 1.5rem; } }
     .post-list li .post-excerpt {
@@ -839,7 +843,7 @@ ul.post-categories li {
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 54px; }
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1400px) {
     .post-title,
     .post-content h1 {
       font-size: 2rem; } }
@@ -857,7 +861,7 @@ ul.post-categories li {
     margin-top: 2rem; }
   .post-content h2 {
     font-size: 1.4rem; }
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1400px) {
       .post-content h2 {
         font-size: 1.5rem; } }
   .post-content h3 {
@@ -887,7 +891,7 @@ ul.post-categories li {
   margin: 0;
   padding: 0;
   font-weight: bold; }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1100px) {
     .taxonomies {
       grid-template-columns: repeat(2, 1fr); } }
   .taxonomies .taxonomy {
@@ -947,7 +951,7 @@ figcaption.align-center {
   .site-footer p, .site-footer ul {
     margin-bottom: 0.5rem; }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1100px) {
   .footer-col-wrapper {
     display: flex; }
 
@@ -991,6 +995,12 @@ figcaption.align-center {
   font-style: normal;
   font-weight: 900;
   src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format("opentype"); }
+/* blockquote용*/
+@font-face {
+  font-family: 'Okbi';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_08@1.0/Okbi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 /* Apply your blog tags.. */
 body,
 h1,
