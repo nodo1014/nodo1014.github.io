@@ -137,6 +137,15 @@
   <li><a href="#1-comment모델-생성">1. Comment모델 생성</a></li>
   <li><a href="#2-템플릿-반영-post_detailhtml">2. 템플릿 반영 (post_detail.html)</a></li>
   <li><a href="#3-로그인-상태에-따라-댓글-폼-노출">3. 로그인 상태에 따라 댓글 폼 노출</a></li>
+  <li><a href="#4commentform">4.CommentForm</a>
+    <ul>
+      <li><a href="#4-1-formspy에-코멘트-모델폼-만들기">4-1 forms.py에 코멘트 모델폼 만들기.</a></li>
+      <li><a href="#4-2-postdetail뷰의-context에-commentform-추가---템플릿">4-2 PostDetail뷰의 context에 CommentForm 추가 -&gt; 템플릿</a></li>
+      <li><a href="#4-3-템플릿--comment_form--크리스피폼-추가">4-3 템플릿 : comment_form | 크리스피폼 추가</a></li>
+      <li><a href="#4-4-urlspy--new_comment">4-4 urls.py : <int:pk>/new_comment/</int:pk></a></li>
+    </ul>
+  </li>
+  <li><a href="#4-5-댓글-입력-뷰-만들기-def-new_commentrequest-pk">4-5 댓글 입력 뷰 만들기 def new_comment(request, pk)</a></li>
 </ul>
 
 </nav>
@@ -187,61 +196,58 @@
 
 <h2 id="3-로그인-상태에-따라-댓글-폼-노출">3. 로그인 상태에 따라 댓글 폼 노출</h2>
 
-<ol>
-  <li><code class="language-plaintext highlighter-rouge">if user.is_authenticated</code>
-```python</li>
-</ol>
-<form id="comment-form" method="POST" action="new_comment/">
-```
-2. `else` 로그인 후 글을 남겨주세요
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">if user.is_authenticated</code></li>
+</ul>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span> <span class="nb">id</span><span class="o">=</span><span class="s">"comment-form"</span> <span class="n">method</span><span class="o">=</span><span class="s">"POST"</span> <span class="n">action</span><span class="o">=</span><span class="s">"new_comment/"</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-## 4. CommentForm(forms.ModelForm) 구현
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">else</code> 로그인 후 글을 남겨주세요</li>
+</ul>
 
-### forms.py에 코멘트 모델폼 만들기.
-```python
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('content',)
-```
-### PostDetail뷰의 context에 CommentForm 추가 -&gt; 템플릿
-```python
-class PostDetail(DetailView)
-    def get_context_data(self, **kwargs):
-        .....
-        context['comment_form'] = CommentForm
-        ....
-```
-### 템플릿
-{ load crispy_forms_tags }
+<h2 id="4commentform">4.CommentForm</h2>
 
-{ comment_form | crispy }
+<h3 id="4-1-formspy에-코멘트-모델폼-만들기">4-1 forms.py에 코멘트 모델폼 만들기.</h3>
 
-### urls.py
-`path('<int:pk>/new_comment/', views.new_comment),
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Comment</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s">'content'</span><span class="p">,)</span>
+</code></pre></div></div>
 
-## 댓글 입력 뷰 만들기 def new_comment(request, pk)
+<h3 id="4-2-postdetail뷰의-context에-commentform-추가---템플릿">4-2 PostDetail뷰의 context에 CommentForm 추가 -&gt; 템플릿</h3>
 
-```python
-def new_comment(request, pk):
-    if request.user.is_authenticated:
-        post = get_object_or_404(Post, pk=pk)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="p">.....</span>
+        <span class="n">context</span><span class="p">[</span><span class="s">'comment_form'</span><span class="p">]</span> <span class="o">=</span> <span class="n">CommentForm</span>
+        <span class="p">....</span>
+</code></pre></div></div>
+<h3 id="4-3-템플릿--comment_form--크리스피폼-추가">4-3 템플릿 : comment_form | 크리스피폼 추가</h3>
 
-        if request.method == 'POST':
-            comment_form = CommentForm(request.POST)
-            if comment_form.is_valid():
-                comment = comment_form.save(commit=False)
-                comment.post = post
-                comment.author = request.user
-                comment.save()
-                return redirect(comment.get_absolute_url())
-        else:
-            return redirect(post.get_absolute_url())
-    else:
-        raise PermissionDenied
-```
-</int:pk></form>
+<h3 id="4-4-urlspy--new_comment">4-4 urls.py : <int:pk>/new_comment/</int:pk></h3>
+
+<h2 id="4-5-댓글-입력-뷰-만들기-def-new_commentrequest-pk">4-5 댓글 입력 뷰 만들기 def new_comment(request, pk)</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">new_comment</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+        <span class="n">post</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Post</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+            <span class="n">comment_form</span> <span class="o">=</span> <span class="n">CommentForm</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">comment_form</span><span class="p">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="n">comment</span> <span class="o">=</span> <span class="n">comment_form</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                <span class="n">comment</span><span class="p">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">post</span>
+                <span class="n">comment</span><span class="p">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">user</span>
+                <span class="n">comment</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">comment</span><span class="p">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">post</span><span class="p">.</span><span class="n">get_absolute_url</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PermissionDenied</span>
+</code></pre></div></div>
 
   </div>
 
