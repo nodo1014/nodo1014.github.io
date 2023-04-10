@@ -1,52 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-09T17:49:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">그냥 손대지 말고, 매뉴얼부터 꼭 보자. 인생은 짧다</title><link href="http://localhost:4000/%EC%9E%A1%EB%8B%B4/2023/04/09/000.html" rel="alternate" type="text/html" title="그냥 손대지 말고, 매뉴얼부터 꼭 보자. 인생은 짧다" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T00:00:00+09:00</updated><id>http://localhost:4000/%EC%9E%A1%EB%8B%B4/2023/04/09/000</id><content type="html" xml:base="http://localhost:4000/%EC%9E%A1%EB%8B%B4/2023/04/09/000.html"><![CDATA[<p>오… span 하이라이트는 백틱! <code class="language-plaintext highlighter-rouge">_posts</code> 
-리빌드 하려면, <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>새 글 작성하려면, <code class="language-plaintext highlighter-rouge">_posts</code> 디렉토리에서 이렇게 <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code></p>
-<ul>
-  <li>다이마믹 테마에서 솔라라이즈드 스킨으로 고정.</li>
-  <li>solarized. _sass/hamilton/skins 에서 daylight 복사해서, solarized.scss 로 생성 후</li>
-  <li>_config.yml 에 skin : solarized.scss 추가</li>
-  <li>근데, 적용이 안되네? 아 놔..</li>
-  <li>
-    <p>다시 bundle exec jekyll serve 해보니, 오류가 나고 있던 상태. 원인은 plugins에 - jekyll-hailton… 을 추가했는데, 빌드 실패 발새중이였다. 항목을 지우고 나서, 실행하니 정산적으로 됐다.</p>
-
-    <p>skin: solarized</p>
-  </li>
-</ul>
-
-<p>plugins:</p>
-<ul>
-  <li>jekyll-seo-tag</li>
-  <li>jekyll-feed</li>
-  <li>jekyll-sitemap</li>
-  <li>jekyll-paginate</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-bundle <span class="nb">exec </span>jekyll serve
-Configuration file: /Users/kang/github/nodo1014.github.io/_config.yml
-
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-10T15:57:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method="post" ... &gt;
+	&lt;table&gt;
+    	 
+      &lt;tr&gt;
+          &lt;th›‹label for="id_tags_str"›Tags:&lt;/label&gt;‹/th&gt;
+          &lt;td&gt; input type="text" name="tags_str" id="id_tags_str"&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  	&lt;/table&gt;
+    &lt;button type="submit" class="btn btn-primary float-right"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
 </code></pre></div></div>
 
-<p>코드스니핏: ruby</p>
+<p>## 1 설치 및 settings.py</p>
+<ol>
+  <li>pip install django-crispy-forms</li>
+  <li>settings.py 설정</li>
+</ol>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"와우, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<blockquote>
+  <p>INSTALLED_APPS 에 추가. ‘crispy_forms’,
+CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
+</blockquote>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="잡담" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[오… span 하이라이트는 백틱! _posts 리빌드 하려면, jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">두잇장고 글쓰기 PostCreate</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html" rel="alternate" type="text/html" title="두잇장고 글쓰기 PostCreate" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html"><![CDATA[<h2 id="1-글쓰기-post-에-폼으로-입력">1 글쓰기: Post 에 폼으로 입력</h2>
+<p>## 2 템플릿 파일 적용</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-</span><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
-<span class="c1"># from django.utils.text import slugify
-</span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Category</span><span class="p">,</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">Post</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> load crispy_forms_tags
+ 
+ 
 
-<span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+태그 부분 &lt;tr&gt;~&lt;/tr&gt; 도 &lt;div&gt;~&lt;/div&gt; 로 변경
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">hr</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">form</span> <span class="n">method</span><span class="o">=</span><span class="s">"post"</span><span class="p">...}</span>
+        
+        <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s">"div_id_tags_str"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s">"id_tags_str"</span><span class="o">&gt;</span><span class="n">Tags</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s">"text"</span> <span class="n">name</span><span class="o">=</span><span class="s">"tags_str"</span> <span class="nb">id</span><span class="o">=</span><span class="s">"id_tags_str"</span> <span class="n">class</span><span class="o">=</span><span class="s">"textinput textInput form-control"</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">button</span> <span class="nb">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="n">class</span><span class="o">=</span><span class="s">"btn btn-primary float-right"</span><span class="o">&gt;</span><span class="n">Submit</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h1 id="markdownx">markdownx</h1>
+
+<h2 id="1-설치앱-등록">1 설치&amp;앱 등록</h2>
+
+<ul>
+  <li>pip install django-markdownx</li>
+  <li>settings.py : ‘markdownx’</li>
+  <li>urls.py : <code class="language-plaintext highlighter-rouge">path('markdownx/', include('markdownx.urls')),</code></li>
+</ul>
+
+<h2 id="2-modelspy-수정">2. models.py 수정</h2>
+
+<ol>
+  <li>컨텐트 필드 속성 수정: <code class="language-plaintext highlighter-rouge">content = MarkdownxField()</code> &lt;– TextField</li>
+  <li><code class="language-plaintext highlighter-rouge">def get_content_markdown()</code> content에서 마크다운을 가져오는 메서드 등록</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_content_markdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">markdown</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="3-템플릿에서">3. 템플릿에서</h2>
+
+<p>``</p>
+
+<h2 id="4-adminpy-수정">4. admin.py 수정</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">markdownx.admin</span> <span class="kn">import</span> <span class="n">MarkdownxModelAdmin</span>
+<span class="c1"># register(모델, 모델Admin)
+</span>
+
+<span class="k">class</span> <span class="nc">CategoryAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">prepopulated_fields</span> <span class="o">=</span> <span class="p">{</span><span class="s">'slug'</span><span class="p">:(</span><span class="s">'name'</span><span class="p">,)}</span>
+<span class="k">class</span> <span class="nc">TagAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">prepopulated_fields</span> <span class="o">=</span> <span class="p">{</span><span class="s">'slug'</span><span class="p">:(</span><span class="s">'name'</span><span class="p">,)}</span>
+    
+<span class="c1">#//TODO: register(모델, 모델Admin)
+</span><span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Category</span><span class="p">,</span> <span class="n">CategoryAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Tag</span><span class="p">,</span> <span class="n">TagAdmin</span><span class="p">)</span>
+<span class="c1"># admin.site.register(Post)
+</span><span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Post</span><span class="p">,</span> <span class="n">MarkdownxModelAdmin</span><span class="p">)</span>
+
+
+</code></pre></div></div>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><category term="CreateView" /><category term="LoginRequiredMixin" /><category term="UserPassesTestMixin" /><category term="폼꾸미기" /><summary type="html"><![CDATA[&lt;form method="post" ... &gt; &lt;table&gt; &lt;tr&gt; &lt;th›‹label for="id_tags_str"›Tags:&lt;/label&gt;‹/th&gt; &lt;td&gt; input type="text" name="tags_str" id="id_tags_str"&gt;&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;button type="submit" class="btn btn-primary float-right"&gt;Submit&lt;/button&gt; &lt;/form&gt;]]></summary></entry><entry><title type="html">17 댓글 Comment</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html" rel="alternate" type="text/html" title="17 댓글 Comment" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html"><![CDATA[<h2 id="1-comment모델-생성">1. Comment모델 생성</h2>
+
+<ol>
+  <li>포린키 : <code class="language-plaintext highlighter-rouge">post</code>, <code class="language-plaintext highlighter-rouge">author</code> // content, created_at, modified_at:DateTimeField(auto_now=True)</li>
+  <li>admin.py : admin.site.register(Comment)</li>
+  <li>댓글 위치 링크: get_absolute_url : <code class="language-plaintext highlighter-rouge">{self.post.get_absolute_url()}#comment-{self.pk}</code></li>
+</ol>
+
+<h2 id="2-템플릿-반영-post_detailhtml">2. 템플릿 반영 (post_detail.html)</h2>
+
+<ol>
+  <li>댓글의 각 div 의 id 에 pk 부여. ( url 링크 위함 )</li>
+  <li>댓글 보여주기 : post.comment_set.iterator ( post.comment.all() )</li>
+  <li>댓글작성자 comment.author.username 
+<code class="language-plaintext highlighter-rouge">for comment in post.comment_set.iterator</code> 후, comment.<code class="language-plaintext highlighter-rouge">author.username</code></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>줄바꿈 허용</td>
+          <td>linebreaks 추가</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h2 id="3-로그인-상태에-따라-댓글-폼-노출">3. 로그인 상태에 따라 댓글 폼 노출</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">if user.is_authenticated</code>
+```python</li>
+</ol>
+<form id="comment-form" method="POST" action="new_comment/">
+```
+2. `else` 로그인 후 글을 남겨주세요
+
+
+## 4. CommentForm(forms.ModelForm) 구현
+
+### forms.py에 코멘트 모델폼 만들기.
+```python
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('content',)
+```
+### PostDetail뷰의 context에 CommentForm 추가 -&gt; 템플릿
+```python
+class PostDetail(DetailView)
+    def get_context_data(self, **kwargs):
+        .....
+        context['comment_form'] = CommentForm
+        ....
+```
+### 템플릿
+{ load crispy_forms_tags }
+
+{ comment_form | crispy }
+
+### urls.py
+`path('<int:pk>/new_comment/', views.new_comment),
+
+## 댓글 입력 뷰 만들기 def new_comment(request, pk)
+
+```python
+def new_comment(request, pk):
+    if request.user.is_authenticated:
+        post = get_object_or_404(Post, pk=pk)
+
+        if request.method == 'POST':
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.author = request.user
+                comment.save()
+                return redirect(comment.get_absolute_url())
+        else:
+            return redirect(post.get_absolute_url())
+    else:
+        raise PermissionDenied
+```
+</int:pk></form>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><summary type="html"><![CDATA[1. Comment모델 생성]]></summary></entry><entry><title type="html">15 글쓰기/수정 PostCreate, PostUpdate</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html" rel="alternate" type="text/html" title="15 글쓰기/수정 PostCreate, PostUpdate" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html"><![CDATA[<h1 id="1-class-postcreate">1 class PostCreate</h1>
+
+<h2 id="1-글쓰기-post-에-폼으로-입력">1 글쓰기: Post 에 폼으로 입력</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
   <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
   <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'content'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">test_func</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+    <span class="c1"># 1-1 author 추가 후, return response
+</span>    <span class="c1"># 1-2 태그 추가
+</span>    <span class="n">포스트</span> <span class="n">추가</span> <span class="n">후</span><span class="p">,</span> <span class="n">포스트에</span> <span class="n">관계</span> <span class="n">추가</span><span class="p">.</span>  <span class="bp">self</span><span class="p">.</span><span class="nb">object</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></div>
+
 <h2 id="2-글쓰기-권한-설정하기-test_funcself">2 글쓰기 권한 설정하기: test_func(self)</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
@@ -111,7 +249,8 @@ self.object.tags.add(tag)</li>
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
 <span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
 <span class="kn">from</span> <span class="nn">django.utils.text</span> <span class="kn">import</span> <span class="n">slugify</span>
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Category</span><span class="p">,</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">Post</span>
@@ -150,9 +289,42 @@ self.object.tags.add(tag)</li>
         <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'/blog/'</span><span class="p">)</span>
 
-</code></pre></div></div>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><category term="CreateView" /><category term="LoginRequiredMixin" /><category term="UserPassesTestMixin" /><summary type="html"><![CDATA[1 글쓰기: Post 에 폼으로 입력]]></summary></entry><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-09T00:00:00+09:00</published><updated>2023-04-09T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html"><![CDATA[<h2 id="1-폼모양-django-crispy-forms">1 폼모양 django-crispy-forms</h2>
-<p>settings.py 에 ‘crispy_forms 등록’
-CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><category term="CreateView" /><category term="LoginRequiredMixin" /><category term="UserPassesTestMixin" /><category term="폼꾸미기" /><summary type="html"><![CDATA[1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’]]></summary></entry><entry><title type="html">깃허브블로그 재시작-설정 bundle exec jekyll serve</title><link href="http://localhost:4000/%EA%B9%83%ED%97%88%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8/2023/04/08/setting.html" rel="alternate" type="text/html" title="깃허브블로그 재시작-설정 bundle exec jekyll serve" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B9%83%ED%97%88%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8/2023/04/08/setting</id><content type="html" xml:base="http://localhost:4000/%EA%B9%83%ED%97%88%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8/2023/04/08/setting.html"><![CDATA[<h2 id="마크다운">마크다운</h2>
+</code></pre></div></div>
+
+<h1 id="2-class-postupdateloginrequiredmixin-updateview">2 class PostUpdate(LoginRequiredMixin, UpdateView):</h1>
+
+<h2 id="2-1-postupdateupdateview">2-1 PostUpdate(UpdateView)</h2>
+
+<ol>
+  <li>template_name 별도로 지정한 이유는?</li>
+  <li>author 를 폼에 넣을 때는 , request.user 였고, tag는 현재 post(self.object)의 tags 를 조회 후, context에 추가 -&gt; 렌더링</li>
+  <li>dispatch 기능은? http_method GET 이면 신규폼, POST면 수정 입력폼</li>
+  <li>dispatch 오버라이딩 이유는? 글쓰기 입력 / 수정 폼을 보여주기 전에, 먼저 폼을 볼 수 있는 권한 검사 실행하기 위함</li>
+  <li>form_valid : 글쓰기와 거의 동일
+    <ul>
+      <li>self.object.tags.clear() 후, 새로 입력.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostUpdate</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'hook_text'</span><span class="p">,</span> <span class="s">'content'</span><span class="p">,</span> <span class="s">'head_image'</span><span class="p">,</span> <span class="s">'file_upload'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">]</span>
+    <span class="c1"># 기본은 접미사가 _form 인 것인데, 분리. 왜?
+</span>    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'blog/post_update_form.html'</span>
+
+    <span class="c1"># 폼에 입력된 데이터 중, 태그는 별도로 불러와야 한다.
+</span>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># 
+</span>    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># 태그 입력 위해
+</span>    <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">PostUpdate</span><span class="p">,</span> <span class="bp">self</span><span class="p">).</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+        <span class="c1"># 현재 post(object) 에 입력된 tags는 모두 지우고, 폼에서 새로 받아서 입력.
+</span>        <span class="bp">self</span><span class="p">.</span><span class="nb">object</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">tags_str</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'tags_str'</span><span class="p">)</span>
+
+</code></pre></div></div>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><category term="CreateView" /><category term="LoginRequiredMixin" /><category term="UserPassesTestMixin" /><summary type="html"><![CDATA[1 class PostCreate]]></summary></entry><entry><title type="html">0408 깃허브블로그 재시작-설정 bundle exec jekyll serve</title><link href="http://localhost:4000/%EA%B8%B0%ED%83%80/2023/04/08/setting.html" rel="alternate" type="text/html" title="0408 깃허브블로그 재시작-설정 bundle exec jekyll serve" /><published>2023-04-08T00:00:00+09:00</published><updated>2023-04-08T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%ED%83%80/2023/04/08/setting</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%ED%83%80/2023/04/08/setting.html"><![CDATA[<h2 id="마크다운">마크다운</h2>
 <p>오… span 하이라이트는 백틱! <code class="language-plaintext highlighter-rouge">_posts</code> 
 리빌드 하려면, <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 <h2 id="새-글-작성">새 글 작성</h2>
@@ -203,9 +375,9 @@ Configuration file: /Users/kang/github/nodo1014.github.io/_config.yml
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>[&quot;자무카&quot;, &quot;깡깡&quot;]</name></author><category term="깃허브블로그" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[마크다운 오… span 하이라이트는 백틱! _posts 리빌드 하려면, jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. 새 글 작성 새 글 작성하려면, _posts 디렉토리에서 이렇게 YYYY-MM-DD-name-of-post.ext 테마 고정 다이마믹 테마에서 솔라라이즈드 스킨으로 고정. solarized. _sass/hamilton/skins 에서 daylight 복사해서, solarized.scss 로 생성 후 _config.yml 에 skin : solarized.scss 추가 근데, 적용이 안되네? 아 놔.. bundle exec 다시 bundle exec jekyll serve 해보니, 오류가 나고 있던 상태. 원인은 plugins에 - jekyll-hailton… 을 추가했는데, 빌드 실패 발새중이였다. 항목을 지우고 나서, 실행하니 정산적으로 됐다.]]></summary></entry><entry><title type="html">카테고리 표시</title><link href="http://localhost:4000/2016/05/20/category.html" rel="alternate" type="text/html" title="카테고리 표시" /><published>2016-05-20T00:00:00+09:00</published><updated>2016-05-20T00:00:00+09:00</updated><id>http://localhost:4000/2016/05/20/category</id><content type="html" xml:base="http://localhost:4000/2016/05/20/category.html"><![CDATA[<p>모냐공</p>
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>[&quot;자무카&quot;, &quot;깡깡&quot;]</name></author><category term="기타" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[마크다운 오… span 하이라이트는 백틱! _posts 리빌드 하려면, jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. 새 글 작성 새 글 작성하려면, _posts 디렉토리에서 이렇게 YYYY-MM-DD-name-of-post.ext 테마 고정 다이마믹 테마에서 솔라라이즈드 스킨으로 고정. solarized. _sass/hamilton/skins 에서 daylight 복사해서, solarized.scss 로 생성 후 _config.yml 에 skin : solarized.scss 추가 근데, 적용이 안되네? 아 놔.. bundle exec 다시 bundle exec jekyll serve 해보니, 오류가 나고 있던 상태. 원인은 plugins에 - jekyll-hailton… 을 추가했는데, 빌드 실패 발새중이였다. 항목을 지우고 나서, 실행하니 정산적으로 됐다.]]></summary></entry><entry><title type="html">카테고리 표시</title><link href="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/05/20/category.html" rel="alternate" type="text/html" title="카테고리 표시" /><published>2016-05-20T00:00:00+09:00</published><updated>2016-05-20T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%ED%83%80/2016/05/20/category</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/05/20/category.html"><![CDATA[<p>모냐공</p>
 
-<p>노노노</p>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[모냐공]]></summary></entry><entry><title type="html">Task Item List</title><link href="http://localhost:4000/junk/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="Task Item List" /><published>2016-01-11T00:00:00+09:00</published><updated>2016-01-11T00:00:00+09:00</updated><id>http://localhost:4000/junk/2016/01/11/task-item-list</id><content type="html" xml:base="http://localhost:4000/junk/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
+<p>노노노</p>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="기타" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[모냐공]]></summary></entry><entry><title type="html">Task Item List</title><link href="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html" rel="alternate" type="text/html" title="Task Item List" /><published>2016-01-11T00:00:00+09:00</published><updated>2016-01-11T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html"><![CDATA[<p>This post tests the style of a task item list.</p>
 
 <p>Source:</p>
 
@@ -225,4 +397,4 @@ Configuration file: /Users/kang/github/nodo1014.github.io/_config.yml
     </ul>
   </li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
-</ul>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="junk" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>
+</ul>]]></content><author><name>[&quot;Bart Simpson&quot;, &quot;Nelson Mandela Muntz&quot;]</name></author><category term="기타" /><category term="markdown" /><category term="css" /><category term="html" /><summary type="html"><![CDATA[This post tests the style of a task item list.]]></summary></entry></feed>

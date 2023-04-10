@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>카테고리 표시 | 암껏도 하지 마</title>
+<title>Task Item List | 암껏도 하지 마</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="카테고리 표시" />
+<meta property="og:title" content="Task Item List" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="모냐공" />
-<meta property="og:description" content="모냐공" />
-<link rel="canonical" href="http://localhost:4000/2016/05/20/category.html" />
-<meta property="og:url" content="http://localhost:4000/2016/05/20/category.html" />
+<meta name="description" content="This post tests the style of a task item list." />
+<meta property="og:description" content="This post tests the style of a task item list." />
+<link rel="canonical" href="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html" />
+<meta property="og:url" content="http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html" />
 <meta property="og:site_name" content="암껏도 하지 마" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-05-20T00:00:00+09:00" />
+<meta property="article:published_time" content="2016-01-11T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="카테고리 표시" />
-<meta name="twitter:site" content="@ngzhio" />
+<meta property="twitter:title" content="Task Item List" />
+<meta name="twitter:site" content="@ksunghun" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2016-05-20T00:00:00+09:00","datePublished":"2016-05-20T00:00:00+09:00","description":"모냐공","headline":"카테고리 표시","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/05/20/category.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/2016/05/20/category.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2016-01-11T00:00:00+09:00","datePublished":"2016-01-11T00:00:00+09:00","description":"This post tests the style of a task item list.","headline":"Task Item List","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EA%B8%B0%ED%83%80/2016/01/11/task-item-list.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -42,6 +42,25 @@
 <!-- Import D2Coding to header 2023-0410 코드블록용 -->
 <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
 <!-- Begin selecting skin -->
+
+  <script>
+    const hour = (new Date()).getHours();
+    let filename = "";
+    if (hour >= 5 && hour < 7) {
+      filename = "/assets/css/skin-sunrise.css";
+    } else if (hour >= 7 && hour < 17) {
+      filename = "/assets/css/skin-daylight.css";
+    } else if (hour >= 17 && hour < 19) {
+      filename = "/assets/css/skin-sunset.css";
+    } else {
+      filename = "/assets/css/skin-midnight.css";
+    }
+    const elem = document.createElement("link");
+    elem.setAttribute("rel", "stylesheet");
+    elem.setAttribute("type", "text/css");
+    elem.setAttribute("href", filename);
+    document.getElementsByTagName("head")[0].appendChild(elem);
+  </script>
 
 <!-- End selecting skin -->
 
@@ -151,69 +170,31 @@
           <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">카테고리 표시</h1>
+    <h1 class="post-title">Task Item List</h1>
   </header>
 
   <div class="post-content">
-    <p>모냐공</p>
+    <p>This post tests the style of a task item list.</p>
 
-<p>노노노</p>
+<p>Source:</p>
 
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Eating
+<span class="p">-</span> [ ] Walking
+<span class="p">  -</span> [ ] Running
+<span class="p">-</span> [ ] Sleeping
+</code></pre></div></div>
 
-<div class="taxonomies-wrapper">
-  <ul class="taxonomies"><li><a class="taxonomy" href="/#%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0">
-              <span>두잇장고</span>
-              <span class="taxonomy-count">2</span>
-            </a>
-          </li><li><a class="taxonomy" href="/#%ED%8C%8C%EC%9D%B4%EC%8D%AC">
-              <span>파이썬</span>
-              <span class="taxonomy-count">2</span>
-            </a>
-          </li><li><a class="taxonomy" href="/#junk">
-              <span>junk</span>
-              <span class="taxonomy-count">1</span>
-            </a>
-          </li><li><a class="taxonomy" href="/#%EA%B9%83%ED%97%88%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8">
-              <span>깃허브블로그</span>
-              <span class="taxonomy-count">1</span>
-            </a>
-          </li><li><a class="taxonomy" href="/#%EC%9E%A1%EB%8B%B4">
-              <span>잡담</span>
-              <span class="taxonomy-count">1</span>
-            </a>
-          </li></ul>
-</div>
+<p>Rendered:</p>
 
-<h2 id="두잇장고">두잇장고</h2>
-      <ul class="post-list-by-taxonomy"><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-09</time> &raquo; <a href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html">16-1 crispy-forms</a>
-          </li><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-09</time> &raquo; <a href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html">두잇장고 글쓰기 PostCreate</a>
-          </li></ul>
-      <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><h2 id="파이썬">파이썬</h2>
-      <ul class="post-list-by-taxonomy"><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-09</time> &raquo; <a href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html">16-1 crispy-forms</a>
-          </li><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-09</time> &raquo; <a href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html">두잇장고 글쓰기 PostCreate</a>
-          </li></ul>
-      <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><h2 id="junk">junk</h2>
-      <ul class="post-list-by-taxonomy"><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2016-01-11</time> &raquo; <a href="/junk/2016/01/11/task-item-list.html">Task Item List</a>
-          </li></ul>
-      <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><h2 id="깃허브블로그">깃허브블로그</h2>
-      <ul class="post-list-by-taxonomy"><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-08</time> &raquo; <a href="/%EA%B9%83%ED%97%88%EB%B8%8C%EB%B8%94%EB%A1%9C%EA%B7%B8/2023/04/08/setting.html">깃허브블로그 재시작-설정 bundle exec jekyll serve</a>
-          </li></ul>
-      <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><h2 id="잡담">잡담</h2>
-      <ul class="post-list-by-taxonomy"><li>
-            <time datetime="2016-05-20T00:00:00+09:00">2023-04-09</time> &raquo; <a href="/%EC%9E%A1%EB%8B%B4/2023/04/09/000.html">그냥 손대지 말고, 매뉴얼부터 꼭 보자. 인생은 짧다</a>
-          </li></ul>
-      <a href="#" onclick="backToTop()" class="back-to-top">Top &#8648;</a><script>
-  function backToTop() {
-    const main = document.getElementById("site-main");
-    main.scrollTop = 0;
-  }
-</script>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Eating</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Walking
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Running</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sleeping</li>
+</ul>
 
   </div>
 

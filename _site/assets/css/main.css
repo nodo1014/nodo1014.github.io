@@ -462,7 +462,7 @@ ul.task-list li {
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem; }
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1600px) {
     .wrapper {
       max-width: calc(1200px - (2rem * 2));
       padding-right: 2rem;
@@ -567,7 +567,7 @@ ul.task-list li {
       display: block; }
   .site-nav .current-page {
     text-decoration: line-through; }
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 1200px) {
     .site-nav {
       position: static;
       float: right;
@@ -601,7 +601,7 @@ ul.task-list li {
   display: grid;
   grid-template-columns: calc(1200px * 0.24) 1fr;
   overflow: hidden; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     .site-body {
       grid-template-columns: calc(1200px * 0.18) 1fr; } }
   @media screen and (max-width: 600px) {
@@ -615,7 +615,7 @@ ul.task-list li {
   padding: 2rem;
   border-right: 1px solid;
   font-size: 0.8rem; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     .site-sidebar {
       padding: 1rem;
       font-size: 0.6rem; } }
@@ -710,7 +710,7 @@ ul.social-icons {
   scrollbar-width: none;
   padding-left: 2rem;
   padding-right: 2rem; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     .site-main {
       padding-left: 1rem;
       padding-right: 1rem; } }
@@ -741,7 +741,7 @@ ul.social-icons {
     .post-list li h2 {
       margin-bottom: 0;
       font-size: 1.4rem; }
-      @media screen and (min-width: 1400px) {
+      @media screen and (min-width: 1600px) {
         .post-list li h2 {
           font-size: 1.5rem; } }
     .post-list li .post-excerpt {
@@ -843,7 +843,7 @@ ul.post-categories li {
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 54px; }
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1600px) {
     .post-title,
     .post-content h1 {
       font-size: 2rem; } }
@@ -861,7 +861,7 @@ ul.post-categories li {
     margin-top: 2rem; }
   .post-content h2 {
     font-size: 1.4rem; }
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1600px) {
       .post-content h2 {
         font-size: 1.5rem; } }
   .post-content h3 {
@@ -891,7 +891,7 @@ ul.post-categories li {
   margin: 0;
   padding: 0;
   font-weight: bold; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     .taxonomies {
       grid-template-columns: repeat(2, 1fr); } }
   .taxonomies .taxonomy {
@@ -951,7 +951,7 @@ figcaption.align-center {
   .site-footer p, .site-footer ul {
     margin-bottom: 0.5rem; }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
   .footer-col-wrapper {
     display: flex; }
 

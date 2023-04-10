@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>두잇장고 글쓰기 PostCreate | 암껏도 하지 마</title>
+<title>15 글쓰기/수정 PostCreate, PostUpdate | 암껏도 하지 마</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="두잇장고 글쓰기 PostCreate" />
+<meta property="og:title" content="15 글쓰기/수정 PostCreate, PostUpdate" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="1 글쓰기: Post 에 폼으로 입력" />
-<meta property="og:description" content="1 글쓰기: Post 에 폼으로 입력" />
-<link rel="canonical" href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html" />
-<meta property="og:url" content="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html" />
+<meta name="description" content="1 class PostCreate" />
+<meta property="og:description" content="1 class PostCreate" />
+<link rel="canonical" href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html" />
+<meta property="og:url" content="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html" />
 <meta property="og:site_name" content="암껏도 하지 마" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-09T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="두잇장고 글쓰기 PostCreate" />
-<meta name="twitter:site" content="@ngzhio" />
+<meta property="twitter:title" content="15 글쓰기/수정 PostCreate, PostUpdate" />
+<meta name="twitter:site" content="@ksunghun" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-09T00:00:00+09:00","datePublished":"2023-04-09T00:00:00+09:00","description":"1 글쓰기: Post 에 폼으로 입력","headline":"두잇장고 글쓰기 PostCreate","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-09T00:00:00+09:00","datePublished":"2023-04-09T00:00:00+09:00","description":"1 class PostCreate","headline":"15 글쓰기/수정 PostCreate, PostUpdate","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/09/15.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -42,6 +42,25 @@
 <!-- Import D2Coding to header 2023-0410 코드블록용 -->
 <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
 <!-- Begin selecting skin -->
+
+  <script>
+    const hour = (new Date()).getHours();
+    let filename = "";
+    if (hour >= 5 && hour < 7) {
+      filename = "/assets/css/skin-sunrise.css";
+    } else if (hour >= 7 && hour < 17) {
+      filename = "/assets/css/skin-daylight.css";
+    } else if (hour >= 17 && hour < 19) {
+      filename = "/assets/css/skin-sunset.css";
+    } else {
+      filename = "/assets/css/skin-midnight.css";
+    }
+    const elem = document.createElement("link");
+    elem.setAttribute("rel", "stylesheet");
+    elem.setAttribute("type", "text/css");
+    elem.setAttribute("href", filename);
+    document.getElementsByTagName("head")[0].appendChild(elem);
+  </script>
 
 <!-- End selecting skin -->
 
@@ -124,6 +143,7 @@
       <li><a href="#selfobjecttagsaddtag">self.object.tags.add(tag)</a></li>
     </ul>
   </li>
+  <li><a href="#2-1-postupdateupdateview">2-1 PostUpdate(UpdateView)</a></li>
 </ul>
 
 </nav>
@@ -135,7 +155,7 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">두잇장고 글쓰기 PostCreate</h1>
+    <h1 class="post-title p-name" itemprop="name headline">15 글쓰기/수정 PostCreate, PostUpdate</h1>
     <p class="post-meta"><time class="dt-published" datetime="2023-04-09T00:00:00+09:00" itemprop="datePublished">
         Apr 9, 2023
       </time>• 
@@ -145,17 +165,23 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="1-글쓰기-post-에-폼으로-입력">1 글쓰기: Post 에 폼으로 입력</h2>
+    <h1 id="1-class-postcreate">1 class PostCreate</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-</span><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
-<span class="c1"># from django.utils.text import slugify
-</span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Category</span><span class="p">,</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">Post</span>
+<h2 id="1-글쓰기-post-에-폼으로-입력">1 글쓰기: Post 에 폼으로 입력</h2>
 
-<span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
   <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
   <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'content'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">test_func</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+    <span class="c1"># 1-1 author 추가 후, return response
+</span>    <span class="c1"># 1-2 태그 추가
+</span>    <span class="n">포스트</span> <span class="n">추가</span> <span class="n">후</span><span class="p">,</span> <span class="n">포스트에</span> <span class="n">관계</span> <span class="n">추가</span><span class="p">.</span>  <span class="bp">self</span><span class="p">.</span><span class="nb">object</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></div>
+
 <h2 id="2-글쓰기-권한-설정하기-test_funcself">2 글쓰기 권한 설정하기: test_func(self)</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
@@ -220,7 +246,8 @@ self.object.tags.add(tag)</li>
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UserPassesTestMixin</span>
 <span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
 <span class="kn">from</span> <span class="nn">django.utils.text</span> <span class="kn">import</span> <span class="n">slugify</span>
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Category</span><span class="p">,</span> <span class="n">Tag</span><span class="p">,</span> <span class="n">Post</span>
@@ -261,6 +288,41 @@ self.object.tags.add(tag)</li>
 
 </code></pre></div></div>
 
+<h1 id="2-class-postupdateloginrequiredmixin-updateview">2 class PostUpdate(LoginRequiredMixin, UpdateView):</h1>
+
+<h2 id="2-1-postupdateupdateview">2-1 PostUpdate(UpdateView)</h2>
+
+<ol>
+  <li>template_name 별도로 지정한 이유는?</li>
+  <li>author 를 폼에 넣을 때는 , request.user 였고, tag는 현재 post(self.object)의 tags 를 조회 후, context에 추가 -&gt; 렌더링</li>
+  <li>dispatch 기능은? http_method GET 이면 신규폼, POST면 수정 입력폼</li>
+  <li>dispatch 오버라이딩 이유는? 글쓰기 입력 / 수정 폼을 보여주기 전에, 먼저 폼을 볼 수 있는 권한 검사 실행하기 위함</li>
+  <li>form_valid : 글쓰기와 거의 동일
+    <ul>
+      <li>self.object.tags.clear() 후, 새로 입력.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PostUpdate</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'hook_text'</span><span class="p">,</span> <span class="s">'content'</span><span class="p">,</span> <span class="s">'head_image'</span><span class="p">,</span> <span class="s">'file_upload'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">]</span>
+    <span class="c1"># 기본은 접미사가 _form 인 것인데, 분리. 왜?
+</span>    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'blog/post_update_form.html'</span>
+
+    <span class="c1"># 폼에 입력된 데이터 중, 태그는 별도로 불러와야 한다.
+</span>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># 
+</span>    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># 태그 입력 위해
+</span>    <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">PostUpdate</span><span class="p">,</span> <span class="bp">self</span><span class="p">).</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+        <span class="c1"># 현재 post(object) 에 입력된 tags는 모두 지우고, 폼에서 새로 받아서 입력.
+</span>        <span class="bp">self</span><span class="p">.</span><span class="nb">object</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">tags_str</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'tags_str'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
   </div>
 
   <footer class="post-footer">
@@ -273,11 +335,6 @@ self.object.tags.add(tag)</li>
             <li class="post-category">
               
               <a href="/categories/#%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0">두잇장고</a>
-            </li>
-          
-            <li class="post-category">
-              
-              <a href="/categories/#%ED%8C%8C%EC%9D%B4%EC%8D%AC">파이썬</a>
             </li>
           
         </ul>
@@ -331,17 +388,17 @@ self.object.tags.add(tag)</li>
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/%EC%9E%A1%EB%8B%B4/2023/04/09/000.html">
+        <a class="post-previous" href="/%EA%B8%B0%ED%83%80/2023/04/08/setting.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> 그냥 손대지 말고, 매뉴얼부터 꼭 보자. 인생은 짧다
+            <i class="fas fa-arrow-left"></i> 0408 깃허브블로그 재시작-설정 bundle exec jekyll serve
 
           </span>
         </a>
       
 
       
-        <a class="post-next" href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html">
+        <a class="post-next" href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
             16-1 crispy-forms

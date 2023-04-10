@@ -7,23 +7,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>16-1 crispy-forms | 암껏도 하지 마</title>
+<title>17 댓글 Comment | 암껏도 하지 마</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="16-1 crispy-forms" />
+<meta property="og:title" content="17 댓글 Comment" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’" />
-<meta property="og:description" content="1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’" />
-<link rel="canonical" href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html" />
-<meta property="og:url" content="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html" />
+<meta name="description" content="1. Comment모델 생성" />
+<meta property="og:description" content="1. Comment모델 생성" />
+<link rel="canonical" href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html" />
+<meta property="og:url" content="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html" />
 <meta property="og:site_name" content="암껏도 하지 마" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-09T00:00:00+09:00" />
+<meta property="article:published_time" content="2023-04-10T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="16-1 crispy-forms" />
-<meta name="twitter:site" content="@ngzhio" />
+<meta property="twitter:title" content="17 댓글 Comment" />
+<meta name="twitter:site" content="@ksunghun" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-09T00:00:00+09:00","datePublished":"2023-04-09T00:00:00+09:00","description":"1 폼모양 django-crispy-forms settings.py 에 ‘crispy_forms 등록’ CRISPY_TEMPLATE_PACK = ‘bootstrap4’","headline":"16-1 crispy-forms","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/16-1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-10T00:00:00+09:00","datePublished":"2023-04-10T00:00:00+09:00","description":"1. Comment모델 생성","headline":"17 댓글 Comment","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"}},"url":"http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-pm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -42,6 +42,25 @@
 <!-- Import D2Coding to header 2023-0410 코드블록용 -->
 <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
 <!-- Begin selecting skin -->
+
+  <script>
+    const hour = (new Date()).getHours();
+    let filename = "";
+    if (hour >= 5 && hour < 7) {
+      filename = "/assets/css/skin-sunrise.css";
+    } else if (hour >= 7 && hour < 17) {
+      filename = "/assets/css/skin-daylight.css";
+    } else if (hour >= 17 && hour < 19) {
+      filename = "/assets/css/skin-sunset.css";
+    } else {
+      filename = "/assets/css/skin-midnight.css";
+    }
+    const elem = document.createElement("link");
+    elem.setAttribute("rel", "stylesheet");
+    elem.setAttribute("type", "text/css");
+    elem.setAttribute("href", filename);
+    document.getElementsByTagName("head")[0].appendChild(elem);
+  </script>
 
 <!-- End selecting skin -->
 
@@ -115,7 +134,9 @@
             <h3 class="toc-title">Table of Contents</h3>
 <nav class="toc-nav">
   <ul class="toc">
-  <li><a href="#1-폼모양-django-crispy-forms">1 폼모양 django-crispy-forms</a></li>
+  <li><a href="#1-comment모델-생성">1. Comment모델 생성</a></li>
+  <li><a href="#2-템플릿-반영-post_detailhtml">2. 템플릿 반영 (post_detail.html)</a></li>
+  <li><a href="#3-로그인-상태에-따라-댓글-폼-노출">3. 로그인 상태에 따라 댓글 폼 노출</a></li>
 </ul>
 
 </nav>
@@ -127,9 +148,9 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">16-1 crispy-forms</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2023-04-09T00:00:00+09:00" itemprop="datePublished">
-        Apr 9, 2023
+    <h1 class="post-title p-name" itemprop="name headline">17 댓글 Comment</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-04-10T00:00:00+09:00" itemprop="datePublished">
+        Apr 10, 2023
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">자무카</span></span></p>
@@ -137,10 +158,90 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="1-폼모양-django-crispy-forms">1 폼모양 django-crispy-forms</h2>
-<p>settings.py 에 ‘crispy_forms 등록’
-CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
+    <h2 id="1-comment모델-생성">1. Comment모델 생성</h2>
 
+<ol>
+  <li>포린키 : <code class="language-plaintext highlighter-rouge">post</code>, <code class="language-plaintext highlighter-rouge">author</code> // content, created_at, modified_at:DateTimeField(auto_now=True)</li>
+  <li>admin.py : admin.site.register(Comment)</li>
+  <li>댓글 위치 링크: get_absolute_url : <code class="language-plaintext highlighter-rouge">{self.post.get_absolute_url()}#comment-{self.pk}</code></li>
+</ol>
+
+<h2 id="2-템플릿-반영-post_detailhtml">2. 템플릿 반영 (post_detail.html)</h2>
+
+<ol>
+  <li>댓글의 각 div 의 id 에 pk 부여. ( url 링크 위함 )</li>
+  <li>댓글 보여주기 : post.comment_set.iterator ( post.comment.all() )</li>
+  <li>댓글작성자 comment.author.username 
+<code class="language-plaintext highlighter-rouge">for comment in post.comment_set.iterator</code> 후, comment.<code class="language-plaintext highlighter-rouge">author.username</code></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>줄바꿈 허용</td>
+          <td>linebreaks 추가</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h2 id="3-로그인-상태에-따라-댓글-폼-노출">3. 로그인 상태에 따라 댓글 폼 노출</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">if user.is_authenticated</code>
+```python</li>
+</ol>
+<form id="comment-form" method="POST" action="new_comment/">
+```
+2. `else` 로그인 후 글을 남겨주세요
+
+
+## 4. CommentForm(forms.ModelForm) 구현
+
+### forms.py에 코멘트 모델폼 만들기.
+```python
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('content',)
+```
+### PostDetail뷰의 context에 CommentForm 추가 -&gt; 템플릿
+```python
+class PostDetail(DetailView)
+    def get_context_data(self, **kwargs):
+        .....
+        context['comment_form'] = CommentForm
+        ....
+```
+### 템플릿
+{ load crispy_forms_tags }
+
+{ comment_form | crispy }
+
+### urls.py
+`path('<int:pk>/new_comment/', views.new_comment),
+
+## 댓글 입력 뷰 만들기 def new_comment(request, pk)
+
+```python
+def new_comment(request, pk):
+    if request.user.is_authenticated:
+        post = get_object_or_404(Post, pk=pk)
+
+        if request.method == 'POST':
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.author = request.user
+                comment.save()
+                return redirect(comment.get_absolute_url())
+        else:
+            return redirect(post.get_absolute_url())
+    else:
+        raise PermissionDenied
+```
+</int:pk></form>
 
   </div>
 
@@ -156,11 +257,6 @@ CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
               <a href="/categories/#%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0">두잇장고</a>
             </li>
           
-            <li class="post-category">
-              
-              <a href="/categories/#%ED%8C%8C%EC%9D%B4%EC%8D%AC">파이썬</a>
-            </li>
-          
         </ul>
       </div>
     
@@ -170,21 +266,6 @@ CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
         <i class="fas fa-tags"></i>
         <ul class="post-taxonomies post-tags">
           
-          
-            <li class="post-tag">
-              
-              <a href="/tags/#createview">createview</a>
-            </li>
-          
-            <li class="post-tag">
-              
-              <a href="/tags/#loginrequiredmixin">loginrequiredmixin</a>
-            </li>
-          
-            <li class="post-tag">
-              
-              <a href="/tags/#userpassestestmixin">userpassestestmixin</a>
-            </li>
           
             <li class="post-tag">
               
@@ -206,21 +287,16 @@ CRISPY_TEMPLATE_PACK = ‘bootstrap4’</p>
               <a href="/tags/#%ED%8F%BC">폼</a>
             </li>
           
-            <li class="post-tag">
-              
-              <a href="/tags/#%ED%8F%BC%EA%BE%B8%EB%AF%B8%EA%B8%B0">폼꾸미기</a>
-            </li>
-          
         </ul>
       </div>
     
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2023/04/09/15.html">
+        <a class="post-previous" href="/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> 두잇장고 글쓰기 PostCreate
+            <i class="fas fa-arrow-left"></i> 16-1 crispy-forms
 
           </span>
         </a>

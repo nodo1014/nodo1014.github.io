@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Task Item List
-categories: junk
+categories: 기타
 tags: [markdown, css, html]
 author:
   - Bart Simpson
