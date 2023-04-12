@@ -1,4 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-10T18:21:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method="post" ... &gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-13T05:48:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">17 댓글 Comment</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html" rel="alternate" type="text/html" title="17 댓글 Comment" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html"><![CDATA[<h1 id="제네릭-뷰-정리">제네릭 뷰 정리</h1>
+
+<h1 id="클래스형-뷰-cbv-class-based-view"><strong>클래스형 뷰 (CBV, Class-Based View)</strong></h1>
+
+<p>클래스형 뷰는 상속과 믹스인 기능을 이용하여 코드 재사용하고 뷰를 체계적으로 구성할 수 있다.</p>
+
+<h2 id="cbv의-장점"><strong>CBV의 장점</strong></h2>
+
+<ul>
+  <li>GET, POST 등 HTTP 메소드에 따른 처리 코드를 작성할 때 if 함수 대신에 메소드 명으로 코드의 구조가 깔끔하다.</li>
+  <li>다중상속 같은 객체지향 기법을 활용해 제너릭 뷰, 믹스인 클래스 등을 사용해 코드의 재사용과 개발 생산성을 높여준다.</li>
+</ul>
+
+<h2 id="cbv-사용-가이드라인"><strong>CBV 사용 가이드라인</strong></h2>
+
+<ul>
+  <li>뷰는 간단 명료해야 한다.</li>
+  <li>뷰 코드의 양은 적으면 적을수록 좋다.</li>
+  <li>뷰 안에서 같은 코드를 반복적으로 사용하지 않는다.</li>
+  <li>뷰는 프레젠테이션 로직에서 관리하고 비즈니스 로직은 모델에서 처리한다. 매우 특별한 경우에만 폼에서 처리한다.</li>
+  <li>403, 404, 500 에러 핸들링에는 CBV를 이용하지 않고 FBV를 이용한다.</li>
+  <li>믹스인은 간단명료해야 한다.</li>
+</ul>
+
+<h1 id="제너릭-뷰와-상속"><strong>제너릭 뷰와 상속</strong></h1>
+
+<p>제너릭 뷰의 4가지 분류</p>
+
+<ul>
+  <li>기반 뷰(Base View): 뷰 클래스를 생성하고 다른, 제너릭 뷰의 부모 클래스가 되는 기본 제너릭 뷰</li>
+  <li>제너릭 보기 뷰(Generic Display View): 객체의 목록 또는 하나의 객체 상세 정보를 보여주는 뷰</li>
+  <li>제너릭 수정 뷰(Generic Edit View): 폼을 통해 객체를 생성, 수정, 삭제하는 기능을 제공하는 뷰</li>
+  <li>제너릭 날짜 뷰(Generic Date View): 날짜 기반 객체의 연/월/일 페이지로 구분해 보여주는 뷰</li>
+</ul>
+
+<h2 id="주요-제너릭-뷰-목록"><strong>주요 제너릭 뷰 목록</strong></h2>
+
+<h3 id="기반-뷰base-view"><strong>기반 뷰(Base View)</strong></h3>
+
+<ul>
+  <li>View: 최상위 부모 제너릭 뷰 클래스</li>
+  <li>TemplateView: 주어진 템플릿으로 렌더링</li>
+  <li>RedirectView: 주어진 URL로 리다이렉트</li>
+</ul>
+
+<h3 id="제너릭-보기-뷰generic-display-view"><strong>제너릭 보기 뷰(Generic Display View)</strong></h3>
+
+<ul>
+  <li>DetailView: 조건에 맞는 하나의 객체 출력</li>
+  <li>ListView: 조건에 맞는 객체 목록 출력</li>
+</ul>
+
+<h3 id="제너릭-수정-뷰generic-edit-view"><strong>제너릭 수정 뷰(Generic Edit View)</strong></h3>
+
+<ul>
+  <li>FormView: 폼이 주어지면 해당 폼을 출력</li>
+  <li>CreateView: 객체를 생성하는 폼 출력</li>
+  <li>UpdateView: 기존 객체를 수정하는 폼을 출력</li>
+  <li>DeleteView: 기존 객체를 삭제하는 폼을 출력</li>
+</ul>
+
+<h3 id="제너릭-날짜-뷰generic-date-view"><strong>제너릭 날짜 뷰(Generic Date View)</strong></h3>
+
+<ul>
+  <li>YearArchiveView: 주어진 연도에 해당하는 객체 출력</li>
+  <li>MonthArchiveView: 주어진 월에 해당하는 객체 출력</li>
+  <li>DayArchiveView: 주어진 날짜에 해당하는 객체 출력</li>
+  <li>TodayArchiveView: 오늘 날짜에 해당하는 객체 출력</li>
+  <li>DateDetailView: 주어진 연, 월, 일 PK(또는 슬러그)에 해당하는 객체 출력</li>
+</ul>
+
+<h2 id="제너릭-뷰-오버라이딩"><strong>제너릭 뷰 오버라이딩</strong></h2>
+
+<h3 id="속성-변수-오버라이딩"><strong>속성 변수 오버라이딩</strong></h3>
+
+<h3 id="model"><strong><code class="language-plaintext highlighter-rouge">model</code></strong></h3>
+
+<p>기본 뷰(View, Template, RedirectView) 3개를 제외하고 모든 제너릭 뷰에서 사용한다.</p>
+
+<h3 id="queryset"><strong><code class="language-plaintext highlighter-rouge">queryset</code></strong></h3>
+
+<p>기본 뷰(View, Template, RedirectView) 3개를 제외하고 모든 제너릭 뷰에서 사용한다. <code class="language-plaintext highlighter-rouge">queryset</code>을 사용하면 <code class="language-plaintext highlighter-rouge">model</code> 속성은 무시된다.</p>
+
+<h3 id="template_name"><strong><code class="language-plaintext highlighter-rouge">template_name</code></strong></h3>
+
+<p>TemplateView를 포함한 모든 제너릭 뷰에서 사용한다. 템플릿 파일명을 문자열로 지정한다.</p>
+
+<h3 id="context_object_name"><strong><code class="language-plaintext highlighter-rouge">context_object_name</code></strong></h3>
+
+<p>뷰에서 템플릿 파일에 전달하는 컨텍스트 변수명을 지정한다.</p>
+
+<h3 id="paginate_by"><strong><code class="language-plaintext highlighter-rouge">paginate_by</code></strong></h3>
+
+<p>ListView와 날짜 기반 뷰(예, YearArchiveView)에서 사용한다. 페이징 기능이 활성화 된 경우 페이지당 출력 항목 수를 정수로 지정한다.</p>
+
+<h3 id="date_field"><strong><code class="language-plaintext highlighter-rouge">date_field</code></strong></h3>
+
+<p>날짜 기반 뷰(예, YearArchiveView)에서 사용한다. 이 필드의 타입은 DateField 또는 DateTimeField이다.</p>
+
+<h3 id="form_class"><strong><code class="language-plaintext highlighter-rouge">form_class</code></strong></h3>
+
+<p>FormView, CreateView, UpdateView에서 폼을 만드는데 사용할 클래스를 지정한다.</p>
+
+<h3 id="success_url"><strong><code class="language-plaintext highlighter-rouge">success_url</code></strong></h3>
+
+<p>FormView, CreateView, UpdateView, DeleteView에서 폼에 대한 처리가 성공한 후 리디이렉트할 URL 주소이다.</p>
+
+<h3 id="메소드-오버라이딩"><strong>메소드 오버라이딩</strong></h3>
+
+<h3 id="def-get_queryset"><strong><code class="language-plaintext highlighter-rouge">def get_queryset()</code></strong></h3>
+
+<p>기본 뷰(View, Template, RedirectView) 3개를 제외하고 모든 제너릭 뷰에서 사용한다. 디폴트는 <code class="language-plaintext highlighter-rouge">queryset</code> 속성을 반환한다. <code class="language-plaintext highlighter-rouge">queryset</code> 속성이 지정되지 않은 경우 모델 매니저 클래스의 all() 메소드를 호출해 QuerySet 객체를 생성해 반환한다.</p>
+
+<h3 id="def-get_context_datakwargs"><strong><code class="language-plaintext highlighter-rouge">def get_context_data(**kwargs)</code></strong></h3>
+
+<p>뷰에서 템플릿 파일에 넘겨주는 컨텍스트 데이터를 추가하거나 변경하는 목적으로 오버라이딩한다.</p>
+
+<h3 id="def-form_validform"><strong><code class="language-plaintext highlighter-rouge">def form_valid(form)</code></strong></h3>
+
+<h3 id="모델을-지정하는-방법-3가지"><strong>모델을 지정하는 방법 3가지</strong></h3>
+
+<ol>
+  <li>model 속성 변수 지정</li>
+  <li>queryset 속성 변수 지정</li>
+  <li><code class="language-plaintext highlighter-rouge">def get_queryset()</code> 메소드 오버라이딩</li>
+</ol>
+
+<h1 id="예제-코드"><strong>예제 코드</strong></h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="n">django</span><span class="p">.</span><span class="n">views</span><span class="p">.</span><span class="n">genericimport</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
+<span class="k">from</span> <span class="p">.</span><span class="n">modelsimport</span> <span class="n">Question</span>
+
+<span class="n">classIndexView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/index.html'</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s">'latest_question_list'</span>
+
+<span class="n">defget_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">return</span> <span class="n">Question</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">'-pub_date'</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">classDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/detail.html'</span>
+
+<span class="n">classResultsView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/results.html'</span>
+
+</code></pre></div></div>
+
+<h1 id="믹스인-다중상속"><strong>믹스인 다중상속</strong></h1>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><summary type="html"><![CDATA[제네릭 뷰 정리]]></summary></entry><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method="post" ... &gt;
 	&lt;table&gt;
     	 
       &lt;tr&gt;
