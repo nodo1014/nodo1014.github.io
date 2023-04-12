@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-13T05:48:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">17 댓글 Comment</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html" rel="alternate" type="text/html" title="17 댓글 Comment" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html"><![CDATA[<h1 id="제네릭-뷰-정리">제네릭 뷰 정리</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2023-04-13T05:57:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">암껏도 하지 마</title><subtitle>bundle exec jekyll install</subtitle><author><name>자무카</name></author><entry><title type="html">제네릭 뷰 정리</title><link href="http://localhost:4000/%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html" rel="alternate" type="text/html" title="제네릭 뷰 정리" /><published>2023-04-13T00:00:00+09:00</published><updated>2023-04-13T00:00:00+09:00</updated><id>http://localhost:4000/%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am</id><content type="html" xml:base="http://localhost:4000/%EC%9E%A5%EA%B3%A0/2023/04/13/%EB%AA%A9-am.html"><![CDATA[<h1 id="제네릭-뷰-정리">제네릭 뷰 정리</h1>
 
+<p><a href="https://wikidocs.net/book/837" target="_blank">위키독스</a></p>
 <h1 id="클래스형-뷰-cbv-class-based-view"><strong>클래스형 뷰 (CBV, Class-Based View)</strong></h1>
 
 <p>클래스형 뷰는 상속과 믹스인 기능을 이용하여 코드 재사용하고 뷰를 체계적으로 구성할 수 있다.</p>
@@ -130,24 +131,24 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">from</span> <span class="n">django</span><span class="p">.</span><span class="n">views</span><span class="p">.</span><span class="n">genericimport</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
 <span class="k">from</span> <span class="p">.</span><span class="n">modelsimport</span> <span class="n">Question</span>
 
-<span class="n">classIndexView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">IndexView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/index.html'</span>
     <span class="n">context_object_name</span> <span class="o">=</span> <span class="s">'latest_question_list'</span>
 
-<span class="n">defget_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="k">return</span> <span class="n">Question</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">'-pub_date'</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
 
-<span class="n">classDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">DetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/detail.html'</span>
 
-<span class="n">classResultsView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ResultsView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s">'cbvpolls/results.html'</span>
 
 </code></pre></div></div>
 
-<h1 id="믹스인-다중상속"><strong>믹스인 다중상속</strong></h1>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="두잇장고" /><category term="파이썬" /><category term="두잇장고" /><category term="장고" /><category term="폼" /><summary type="html"><![CDATA[제네릭 뷰 정리]]></summary></entry><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method="post" ... &gt;
+<h1 id="믹스인-다중상속"><strong>믹스인 다중상속</strong></h1>]]></content><author><name>[&quot;자무카&quot;]</name></author><category term="장고" /><category term="장고" /><category term="제네릭뷰" /><summary type="html"><![CDATA[제네릭 뷰 정리]]></summary></entry><entry><title type="html">16-1 crispy-forms</title><link href="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html" rel="alternate" type="text/html" title="16-1 crispy-forms" /><published>2023-04-10T00:00:00+09:00</published><updated>2023-04-10T00:00:00+09:00</updated><id>http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am</id><content type="html" xml:base="http://localhost:4000/%EB%91%90%EC%9E%87%EC%9E%A5%EA%B3%A0/2023/04/10/%EC%9B%94-am.html"><![CDATA[<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method="post" ... &gt;
 	&lt;table&gt;
     	 
       &lt;tr&gt;
