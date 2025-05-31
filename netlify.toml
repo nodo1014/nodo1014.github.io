@@ -5,9 +5,12 @@
 [build.environment]
   RUBY_VERSION = "3.1.0"
   JEKYLL_ENV = "production"
+  PAGES_REPO_NWO = "nodo1014/nodo1014.github.io"
 
 [context.deploy-preview.environment]
   JEKYLL_ENV = "development"
+  PAGES_REPO_NWO = "nodo1014/nodo1014.github.io"
 
 [context.branch-deploy.environment]
-  JEKYLL_ENV = "development" 
+  JEKYLL_ENV = "development"
+  PAGES_REPO_NWO = "nodo1014/nodo1014.github.io" 

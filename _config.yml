@@ -4,6 +4,11 @@ author: 자무카
 avatar: /logo.png
 email: htmsejong@gmail.com
 
+# GitHub Pages 설정
+url: "https://nodo1014.github.io"
+baseurl: ""
+repository: nodo1014/nodo1014.github.io
+
 # skin: solarized
 
 plugins:
