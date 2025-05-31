@@ -12,15 +12,15 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
-  # Jekyll 4.x 호환성
-  spec.add_runtime_dependency "jekyll", ">= 3.9", "< 5.0"
-  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.8"
-  spec.add_runtime_dependency "jekyll-feed", "~> 0.17"
+  # GitHub Pages 호환성 (Jekyll 3.9.x)
+  spec.add_runtime_dependency "jekyll", "~> 3.9.0"
+  spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
+  spec.add_runtime_dependency "jekyll-feed", "~> 0.15"
   spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
   spec.add_runtime_dependency "kramdown-parser-gfm", "~> 1.1"
   
-  # Ruby 3.4 호환성
+  # Ruby 3.x 호환성
   spec.add_runtime_dependency "csv", "~> 3.2"
   spec.add_runtime_dependency "logger", "~> 1.5"
 

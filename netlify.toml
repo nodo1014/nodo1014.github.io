@@ -4,12 +4,6 @@
 
 [build.environment]
   RUBY_VERSION = "3.1.0"
-  BUNDLE_VERSION = "2.3.26"
-
-[[plugins]]
-  package = "netlify-plugin-ruby"
-
-[context.production.environment]
   JEKYLL_ENV = "production"
 
 [context.deploy-preview.environment]
